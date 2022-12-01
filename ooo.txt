@@ -1,0 +1,1 @@
+git remote add origin https://github.com/Karel200/Quentin_Tarantino_Movies.git
