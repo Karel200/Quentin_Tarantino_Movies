@@ -34,11 +34,6 @@ const Header = ({ siteTitle }) => (
                 Contact
               </Link>
             </li>
-            <li className={nav_link}>
-              <Link className={nav_link_title} to="/contact">
-                {siteTitle}
-              </Link>
-            </li>
           </ul>
         </nav>
   </div>

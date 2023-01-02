@@ -31,6 +31,7 @@ const Layout = ({ children }) => {
         style={{
           margin: `0 auto`,
           maxWidth: `100%`,
+          minHeight: `80.2vh`,
           padding: `var(--size-gutter)`,
           backgroundColor: "green"
         }}

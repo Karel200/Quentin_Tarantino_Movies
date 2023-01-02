@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
 import Movie from "../../components/Movie"
-import {AllMovies}   from "./page.module.css";
+import {AllMovies}   from "../page.module.css";
 
 
 
@@ -14,11 +14,10 @@ const MoviesPage = ({
     },
   }) => {
     return (
-        <Layout pageTitle="Artists of Inghelbrecht Agency">
-
+        <Layout pageTitle="Movies">
             <div className={AllMovies}>
               {edges.map(({ node: movie }) => (
-                <Movie  slug={movie.slug} movie={movie} />
+                <Movie key={movie.id} movie={movie} slug={movie.slug} />
               ))}
             </div>
 
@@ -30,33 +29,25 @@ const MoviesPage = ({
 
 export const query = graphql`
 query MyQuery {
-    allWpMovie {
-      edges {
-        node {
-          movieMeta {
-            title
-            description
-            directedBy
-            genres {
-              name
-            }
-            writtenBy
-            producerBy
-            releaseDate
-            time
-            poster {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
+  allWpMovie {
+    edges {
+      node {
+        movieMeta {
+          title
+          poster {
+            localFile {
+              childImageSharp {
+                gatsbyImageData
               }
-              altText
             }
-            trailer
+            altText
           }
         }
+        slug
+        id
       }
     }
   }
+}
 `
 export default MoviesPage;

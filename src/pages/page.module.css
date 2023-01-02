@@ -1,0 +1,44 @@
+
+/*Home*/
+.Homediv{
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+}
+.Homeintroduction{
+    display: flex;
+    flex-direction: row;
+}
+.Homeintroductiondivs{
+    background-color: blue;
+    width: 50%;
+    justify-content: center;
+}
+.homeimg{
+    width: 30rem;
+    height: auto;
+    border-radius: 3rem;
+
+}
+.homeMovies{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.AllMovies{
+    display: flex;
+    width: 80%;
+    margin-left: 10%;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    
+}
+
+.moviesPage{
+    background-color: red;
+    width: 100%;
+}
