@@ -10,13 +10,22 @@
     display: flex;
     flex-direction: row;
 }
-.Homeintroductiondivs{
-    background-color: blue;
-    width: 50%;
-    justify-content: center;
+.Homeintroductiondivtext{
+    width: 60%;
+    
+}
+.Homeintroductiondivimg{
+    width: 40%;
+}
+.Homeintroductiondivtext h2 {
+    font-size: 3rem;
+}
+.Homeintroductiondivtext p {
+    width: 100%;
+    font-size: 1.2rem;
 }
 .homeimg{
-    width: 30rem;
+    width: 100%;
     height: auto;
     border-radius: 3rem;
 

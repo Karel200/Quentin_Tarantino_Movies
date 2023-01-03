@@ -7,7 +7,8 @@ import Movie from "../components/Movie"
 import {
   Homediv,
   Homeintroduction,
-  Homeintroductiondivs,
+  Homeintroductiondivtext,
+  Homeintroductiondivimg,
   homeimg,
   homeMovies
 }from "./page.module.css"
@@ -24,11 +25,11 @@ const IndexPage = ({
   <Layout>
     <div className={Homediv}>
       <div className={Homeintroduction }>
-        <div className={Homeintroductiondivs }>
+        <div className={Homeintroductiondivtext }>
           <h2>{homeFields.title}</h2>
           <p>{homeFields.summary}</p>
         </div>
-        <div className={Homeintroductiondivs }>
+        <div className={Homeintroductiondivimg }>
           <GatsbyImage
             image={image}
             className={homeimg}

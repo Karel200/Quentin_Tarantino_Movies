@@ -33,10 +33,9 @@ const Layout = ({ children }) => {
           maxWidth: `100%`,
           minHeight: `80.2vh`,
           padding: `var(--size-gutter)`,
-          backgroundColor: "green"
         }}
       >
-        <main  style={{ backgroundColor: "red"}} >{children}</main>
+        <main  style={{}} >{children}</main>
       </div>
         <Footer/>
     </>
