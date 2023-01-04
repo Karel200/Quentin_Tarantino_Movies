@@ -6,6 +6,15 @@
     display: flex;
     flex-direction: column;
 }
+.homeaboutsite{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+.homeaboutsite h2 {
+    font-size: 3rem;
+}
 .Homeintroduction{
     display: flex;
     flex-direction: row;
@@ -50,4 +59,81 @@
 .moviesPage{
     background-color: red;
     width: 100%;
+}
+
+/*about page */
+
+.aboutdiv{
+    width: 80%;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+}
+.aboutsite{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+}
+.aboutsite h2 {
+    font-size: 3rem;
+}
+.siteintroduction{
+    display: flex;
+    flex-direction: row;
+}
+.siteintroductiondivtext{
+    width: 60%;
+    
+}
+.siteintroductiondivimg{
+    width: 40%;
+}
+.siteintroductiondivtext h2 {
+    font-size: 3rem;
+}
+.siteintroductiondivtext p {
+    width: 100%;
+    font-size: 1.2rem;
+}
+.siteimg{
+    width: 100%;
+    height: auto;
+    border-radius: 3rem;
+
+}
+.abouttarantino {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+
+}
+.abouttarantino h2 {
+    font-size: 3rem;
+}
+.tarantinointroduction{
+    display: flex;
+    flex-direction: row;
+}
+.tarantinointroductiondivtext{
+    width: 60%;
+    
+}
+.tarantinointroductiondivimg{
+    width: 40%;
+}
+.tarantinointroductiondivtext h2 {
+    font-size: 3rem;
+}
+.tarantinointroductiondivtext p {
+    width: 100%;
+    font-size: 1.2rem;
+}
+.tarantinoimg{
+    width: auto;
+    height: auto;
+    border-radius: 3rem;
+
 }

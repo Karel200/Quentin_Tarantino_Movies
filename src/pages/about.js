@@ -3,14 +3,18 @@ import { Link,graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
-import Movie from "../components/Movie"
 import {
-  Homediv,
-  Homeintroduction,
-  Homeintroductiondivtext,
-  Homeintroductiondivimg,
-  homeimg,
-  homeMovies
+  aboutdiv,
+  aboutsite,
+  siteintroduction,
+  siteintroductiondivtext,
+  siteintroductiondivimg,
+  siteimg,
+  abouttarantino,
+  tarantinointroduction,
+  tarantinointroductiondivtext,
+  tarantinointroductiondivimg,
+  tarantinoimg,
 }from "./page.module.css"
 
 
@@ -20,21 +24,39 @@ const AboutPage = ({
     wpPage: { aboutUsFields },
   },
 }) => { 
-  const image = getImage(aboutUsFields.summaryPicture.localFile)
+  const siteimage = getImage(aboutUsFields.summaryPicture.localFile)
+  const tarantinoimages = getImage(aboutUsFields.aboutHimPicture.localFile)
   return(
   <Layout>
-    <div className={Homediv}>
-      <div className={Homeintroduction }>
-        <div className={Homeintroductiondivtext }>
+    <div className={aboutdiv}>
+      <div className={aboutsite}>
           <h2>{aboutUsFields.aboutTitle}</h2>
-          <p>{aboutUsFields.summary}</p>
+          <div className={tarantinointroduction }>
+            <div className={tarantinointroductiondivtext }>
+              <p>{aboutUsFields.summary}</p>
+            </div>
+            <div className={tarantinointroductiondivimg }>
+              <GatsbyImage
+                image={siteimage}
+                className={tarantinoimg}
+                alt={aboutUsFields.summaryPicture.altText}
+              />
+            </div>
+          </div>
         </div>
-        <div className={Homeintroductiondivimg }>
-          <GatsbyImage
-            image={image}
-            className={homeimg}
-            alt={aboutUsFields.summaryPicture.altText}
-          />
+      <div className={abouttarantino}>
+        <h2>{aboutUsFields.aboutHimTitle}</h2>
+        <div className={tarantinointroduction }>
+          <div className={tarantinointroductiondivtext }>
+            <p>{aboutUsFields.aboutHim}</p>
+          </div>
+          <div className={tarantinointroductiondivimg }>
+            <GatsbyImage
+              image={tarantinoimages}
+              className={tarantinoimg}
+              alt={aboutUsFields.aboutHimPicture.altText}
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -43,31 +65,30 @@ const AboutPage = ({
 
 export const query = graphql`
 query myQueryAndMyQueryAndMyQueryAndMyQuery  {
-    wpPage(slug: {eq: "about"}) {
-      aboutUsFields {
-        aboutTitle
-        summary
-        summaryPicture {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED)
-            }
+  wpPage(slug: {eq: "about"}) {
+    aboutUsFields {
+      aboutTitle
+      summary
+      summaryPicture {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED)
           }
-          altText
         }
-        aboutHim
-        aboutHimPicture {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED)
-            }
+        altText
+      }
+      aboutHimTitle
+      aboutHim
+      aboutHimPicture {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED)
           }
-          altText
         }
       }
     }
   }
-
+}
 `
 
 export default AboutPage

@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import Movie from "../components/Movie"
 import {
   Homediv,
+  homeaboutsite,
   Homeintroduction,
   Homeintroductiondivtext,
   Homeintroductiondivimg,
@@ -24,19 +25,21 @@ const IndexPage = ({
   return(
   <Layout>
     <div className={Homediv}>
-      <div className={Homeintroduction }>
-        <div className={Homeintroductiondivtext }>
+      <div className={homeaboutsite}>
           <h2>{homeFields.title}</h2>
-          <p>{homeFields.summary}</p>
+          <div className={Homeintroduction }>
+            <div className={Homeintroductiondivtext }>
+              <p>{homeFields.summary}</p>
+            </div>
+            <div className={Homeintroductiondivimg }>
+              <GatsbyImage
+                image={image}
+                className={homeimg}
+                alt={homeFields.picture.altText}
+              />
+            </div>
+          </div>
         </div>
-        <div className={Homeintroductiondivimg }>
-          <GatsbyImage
-            image={image}
-            className={homeimg}
-            alt={homeFields.picture.altText}
-          />
-        </div>
-      </div>
       <div className={homeMovies}>
         {homeFields.movies.map((movie) => <Movie key={movie.id}  movie={movie} slug={movie.slug} /> )}
       </div>
