@@ -4,7 +4,6 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import {
   wrapper,
   image,
-  movieTitle
 } from "./movie.module.css"
 
 // Movie Component
@@ -18,9 +17,6 @@ const Movie = ({ movie, slug }) => {
           image={poster}
           alt={movie.movieMeta.poster.altText}
           />
-          <div className={movieTitle} >
-            <p >{movie.movieMeta.title}</p>
-          </div>
         </Link>
       
     )

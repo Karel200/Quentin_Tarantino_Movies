@@ -21,6 +21,9 @@ const MoviesPage = ({
         <Layout pageTitle="Artist Template">
           <section className={moviesPage}>
             <p>{movie.title}</p>
+            <p>{movie.description}</p>
+            <p>{movie.directedBy}</p>
+            <p>{movie.releaseDate}</p>
           </section>
             
         </Layout>
