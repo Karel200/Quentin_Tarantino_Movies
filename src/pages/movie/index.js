@@ -3,23 +3,48 @@ import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
 import Movie from "../../components/Movie"
-import {AllMovies}   from "../page.module.css";
+import {
+  AllMovies,
+  moviesdiv,
+  moviesintroduction,
+  movieintroductiondivtext,
+  movieintroductiondivimg,
+  movieimg,
+
+}   from "../page.module.css";
 
 
 
 const MoviesPage = ({
     data: {
+        wpPage: {moviesFields},
         allWpMovie: { edges },
       
     },
   }) => {
+     const moviespicture = getImage(moviesFields.picture.localFile)
     return (
         <Layout pageTitle="Movies">
-            <div className={AllMovies}>
-              {edges.map(({ node: movie }) => (
-                <Movie key={movie.id} movie={movie} slug={movie.slug} />
-              ))}
+         <div className={moviesdiv}>
+          <h2>{moviesFields.title}</h2>
+          <div className={moviesintroduction }>
+            <div className={movieintroductiondivtext }>
+              <p>{moviesFields.description}</p>
             </div>
+            <div className={movieintroductiondivimg}>
+              <GatsbyImage
+                image={moviespicture}
+                className={movieimg}
+                alt={moviesFields.picture.altText}
+              />
+            </div>
+          </div>
+        </div>
+          <div className={AllMovies}>
+            {edges.map(({ node: movie }) => (
+              <Movie key={movie.id} movie={movie} slug={movie.slug} />
+            ))}
+          </div>
 
         </Layout>
     )
@@ -29,11 +54,24 @@ const MoviesPage = ({
 
 export const query = graphql`
 query MyQuery {
+  wpPage(slug: {eq: "movies-page"}) {
+    moviesFields {
+      title
+      description
+      picture {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(placeholder: BLURRED)
+          }
+        }
+        altText
+      }
+    }
+  }
   allWpMovie {
     edges {
       node {
         movieMeta {
-          title
           poster {
             localFile {
               childImageSharp {

@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
 import {
-    moviesPage
+  moviePage
 } from "../page.module.css"
 
 
@@ -19,7 +19,7 @@ const MoviesPage = ({
    
     return (
         <Layout pageTitle="Artist Template">
-          <section className={moviesPage}>
+          <section className={moviePage}>
             <p>{movie.title}</p>
             <p>{movie.description}</p>
             <p>{movie.directedBy}</p>

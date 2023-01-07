@@ -29,7 +29,7 @@ const IndexPage = ({
           <h2>{homeFields.title}</h2>
           <div className={Homeintroduction }>
             <div className={Homeintroductiondivtext }>
-              <p>{homeFields.summary}</p>
+              <p>{homeFields.description}</p>
             </div>
             <div className={Homeintroductiondivimg }>
               <GatsbyImage
@@ -41,7 +41,7 @@ const IndexPage = ({
           </div>
         </div>
       <div className={homeMovies}>
-        {homeFields.movies.map((movie) => <Movie key={movie.id}  movie={movie} slug={movie.slug} /> )}
+        {homeFields.featuredProducts.map((movie) => {return <Movie key={movie.id}  movie={movie} slug={`movie/${movie.slug}`} />} )}
       </div>
     </div>
   </Layout>
@@ -52,7 +52,7 @@ query myQueryAndMyQuery  {
   wpPage(slug: {eq: "home"}) {
     homeFields {
       title
-      summary
+      description
       picture {
         localFile {
           childImageSharp {
@@ -61,12 +61,11 @@ query myQueryAndMyQuery  {
         }
         altText
       }
-      movies {
+      featuredProducts {
         ... on WpMovie {
           id
           slug
           movieMeta {
-            title
             poster {
               localFile {
                 childImageSharp {
