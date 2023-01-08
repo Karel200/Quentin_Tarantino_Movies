@@ -32,11 +32,9 @@ const MoviesPage = ({
               <p><span className={movieInfo} >Directed By:  </span>{movie.directedBy}</p>
               <p><span className={movieInfo} >Producer By:  </span>{movie.producerBy}</p>
               <p><span className={movieInfo} >Written By:  </span>{movie.writtenBy}</p>
-              <p><span className={movieInfo}>Genres:  </span>{movie.genres.map((genre,i) => ` ${genre.name}${i + 1 < movie.genres.length && ", "}`)}</p>
-              <p><span className={movieInfo}>time:  </span>{movie.time}</p>
+              <p><span className={movieInfo}>Genres:  </span>{movie.genres.map((genre,i) => ` ${genre.name} `)}</p>
+              <p><span className={movieInfo}>time:  </span>{movie.time} min</p>
               <p><span className={movieInfo}>ReleaseDate:  </span>{movie.releaseDate}</p>
-
-              
             </div>
             <div >
               <GatsbyImage
