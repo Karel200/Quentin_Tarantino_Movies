@@ -48,7 +48,7 @@ const IndexPage = ({
 )}
 
 export const query = graphql`
-query myQueryAndMyQuery  {
+query   {
   wpPage(slug: {eq: "home"}) {
     homeFields {
       title

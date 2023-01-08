@@ -3,7 +3,12 @@ import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../../components/layout"
 import {
-  moviePage
+  moviediv,
+  movieintroduction,
+  movieintroductiondivtext,
+  movieintroductiondivimg,
+  movieimg,
+  movieInfo
 } from "../page.module.css"
 
 
@@ -16,14 +21,33 @@ const MoviesPage = ({
       },
     },
   }) => {
-   
+    const poster  = getImage(movie.poster.localFile)
     return (
         <Layout pageTitle="Artist Template">
-          <section className={moviePage}>
-            <p>{movie.title}</p>
-            <p>{movie.description}</p>
-            <p>{movie.directedBy}</p>
-            <p>{movie.releaseDate}</p>
+          <section >
+          <div className={moviediv}>
+          <h2>{movie.title}</h2>
+          <div className={movieintroduction }>
+            <div className={movieintroductiondivtext }>
+              <p><span className={movieInfo} >Description:  </span> <br/>{movie.description}</p>
+              <p><span className={movieInfo} >Directed By:  </span>{movie.directedBy}</p>
+              <p><span className={movieInfo} >Producer By:  </span>{movie.producerBy}</p>
+              <p><span className={movieInfo} >Written By:  </span>{movie.writtenBy}</p>
+              <p><span className={movieInfo}>Genres:  </span>{movie.genres.map((genre,i) => ` ${genre.name}${i + 1 < movie.genres.length && ", "}`)}</p>
+              <p><span className={movieInfo}>time:  </span>{movie.time}</p>
+              <p><span className={movieInfo}>ReleaseDate:  </span>{movie.releaseDate}</p>
+
+              
+            </div>
+            <div className={movieintroductiondivimg}>
+              <GatsbyImage
+                image={poster}
+                className={movieimg}
+                alt={movie.poster.altText}
+              />
+            </div>
+          </div>
+        </div>
           </section>
             
         </Layout>
@@ -31,7 +55,7 @@ const MoviesPage = ({
 }
 
 export const query = graphql`
-query   ($slug: String) {
+query ($slug: String) {
     wpMovie (slug: {eq: $slug})  {
         movieMeta {
             title
@@ -44,7 +68,6 @@ query   ($slug: String) {
             releaseDate
             time
             writtenBy
-            trailer
             poster {
                 localFile {
                 childImageSharp {
@@ -53,7 +76,6 @@ query   ($slug: String) {
             }
                 altText
             }
-            mainActors
             }
             slug
             id

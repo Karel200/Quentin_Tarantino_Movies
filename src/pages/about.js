@@ -6,10 +6,6 @@ import Layout from "../components/layout"
 import {
   aboutdiv,
   aboutsite,
-  siteintroduction,
-  siteintroductiondivtext,
-  siteintroductiondivimg,
-  siteimg,
   abouttarantino,
   tarantinointroduction,
   tarantinointroductiondivtext,
@@ -64,7 +60,7 @@ const AboutPage = ({
 )}
 
 export const query = graphql`
-query myQueryAndMyQueryAndMyQueryAndMyQuery  {
+query   {
   wpPage(slug: {eq: "about"}) {
     aboutUsFields {
       aboutTitle

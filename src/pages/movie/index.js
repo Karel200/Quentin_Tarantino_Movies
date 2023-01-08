@@ -7,9 +7,9 @@ import {
   AllMovies,
   moviesdiv,
   moviesintroduction,
-  movieintroductiondivtext,
-  movieintroductiondivimg,
-  movieimg,
+  moviesintroductiondivtext,
+  movieisntroductiondivimg,
+  moviesimg,
 
 }   from "../page.module.css";
 
@@ -28,13 +28,13 @@ const MoviesPage = ({
          <div className={moviesdiv}>
           <h2>{moviesFields.title}</h2>
           <div className={moviesintroduction }>
-            <div className={movieintroductiondivtext }>
+            <div className={moviesintroductiondivtext }>
               <p>{moviesFields.description}</p>
             </div>
-            <div className={movieintroductiondivimg}>
+            <div className={movieisntroductiondivimg}>
               <GatsbyImage
                 image={moviespicture}
-                className={movieimg}
+                className={moviesimg}
                 alt={moviesFields.picture.altText}
               />
             </div>
