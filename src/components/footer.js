@@ -1,15 +1,23 @@
 import * as React from "react"
+import PropTypes from "prop-types"
 import {
     footer,
   } from "./footer.module.css"
 
-const Footer = () =>{
+const Footer = ({ siteTitle }) =>{
     return(
         <div className={footer}>
-            © {new Date().getFullYear()} &middot; Built with dddddd
-            {` `}
-            <a href="https://www.gatsbyjs.com">Gatsby</a>
+            <p>{siteTitle}</p>
+            <p> © {new Date().getFullYear()} &middot; Built with dddddd{` `}<a href="https://www.gatsbyjs.com">Gatsby</a></p>
         </div>
     );
 }
+
+Footer.propTypes = {
+    siteTitle: PropTypes.string,
+  }
+Footer.defaultProps = {
+    siteTitle: ``,
+}
+  
 export default Footer

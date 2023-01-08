@@ -37,7 +37,7 @@ const Layout = ({ children }) => {
       >
         <main  style={{}} >{children}</main>
       </div>
-        <Footer/>
+        <Footer siteTitle={data.site.siteMetadata?.title || `Title`}/>
     </>
   )
 }

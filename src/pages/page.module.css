@@ -6,6 +6,10 @@
     display: flex;
     flex-direction: column;
 }
+.Homediv h2{
+    font-size: 2rem;
+
+}
 .homeaboutsite{
     width: 100%;
     display: flex;

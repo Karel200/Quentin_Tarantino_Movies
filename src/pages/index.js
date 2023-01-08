@@ -40,6 +40,7 @@ const IndexPage = ({
             </div>
           </div>
         </div>
+      <h2>{homeFields.featuredProductsTitle}</h2>
       <div className={homeMovies}>
         {homeFields.featuredProducts.map((movie) => {return <Movie key={movie.id}  movie={movie} slug={`movie/${movie.slug}`} />} )}
       </div>
@@ -48,7 +49,7 @@ const IndexPage = ({
 )}
 
 export const query = graphql`
-query   {
+query  {
   wpPage(slug: {eq: "home"}) {
     homeFields {
       title
@@ -61,6 +62,7 @@ query   {
         }
         altText
       }
+      featuredProductsTitle
       featuredProducts {
         ... on WpMovie {
           id
@@ -72,6 +74,7 @@ query   {
                   gatsbyImageData(placeholder: BLURRED)
                 }
               }
+              altText
             }
           }
         }

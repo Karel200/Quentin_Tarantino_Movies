@@ -6,7 +6,6 @@ import {
   moviediv,
   movieintroduction,
   movieintroductiondivtext,
-  movieintroductiondivimg,
   movieimg,
   movieInfo
 } from "../page.module.css"
@@ -39,7 +38,7 @@ const MoviesPage = ({
 
               
             </div>
-            <div className={movieintroductiondivimg}>
+            <div >
               <GatsbyImage
                 image={poster}
                 className={movieimg}
