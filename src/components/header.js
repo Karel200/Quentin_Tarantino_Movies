@@ -10,7 +10,7 @@ import {
   nav_link_title,
 } from "./header.module.css"
 
-const Header = ({ siteTitle }) => (
+const Header = () => (
   <div className={headerContainer}>
     <nav className={nav} >
           <ul className={nav_links} >

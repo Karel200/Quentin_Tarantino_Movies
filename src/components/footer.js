@@ -8,7 +8,7 @@ const Footer = ({ siteTitle }) =>{
     return(
         <div className={footer}>
             <p>{siteTitle}</p>
-            <p> © {new Date().getFullYear()} &middot; Built with dddddd{` `}<a href="https://www.gatsbyjs.com">Gatsby</a></p>
+            <p> © {new Date().getFullYear()} &middot; Built with {` `}<a href="https://www.gatsbyjs.com">Gatsby</a></p>
         </div>
     );
 }
